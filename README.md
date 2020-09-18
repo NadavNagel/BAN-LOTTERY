@@ -1,12 +1,15 @@
 # BAN-LOTTERY
 Born Again as a Sparse Lottery Wining Networks
-
+                
 ## Training
 ```bash
-$ python train.py --h
+$ python train.py
+For example, how to run experiment 3.2.1_h from the paper
+usage: train.py [--lr 0.01][--batch_size 64] [--dataset 'mnist'][--outdir "results"] 
+                [--print_interval 50][--decay 1] [--experiment_name '3.2.1'][--prune 'every_gen']
+                [--init_teq 'random'][--n_epoch 10][--n_gen 10][--label 'hard'][--windiw 0]
 
 optional arguments:
-  --weight WEIGHT
   --lr Lerning Rate
   --batch_size BATCH_SIZE
   --dataset DATASET 
@@ -32,7 +35,8 @@ optional arguments:
 ## Infer
 ```bash
 $ python infer.py --h
-
+For example, how to run infer for experiment 3.2.1_h from the paper for ensenble with all students
+usage: train.py [--dataset 'mnist'] [--weights_root OUTDIR][--batch_size 64][--experiment_name '3.2.1'][--ensemble_models [0,1,2,3,4,5,6,7,8,9]]
 optional arguments:
   --dataset DATASET 
   --weights_root OUTDIR
