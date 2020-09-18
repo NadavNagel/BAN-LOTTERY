@@ -19,7 +19,6 @@ def main():
     parser.add_argument("--weight", type=str, default=None)
     parser.add_argument("--lr", type=float, default=0.01) ##0.01 mnist, 0.001 cifar
     parser.add_argument("--batch_size", type=int, default=64)
-    parser.add_argument("--resume_gen", type=int, default=0)
     parser.add_argument("--dataset", type=str, default="mnist")
     parser.add_argument("--outdir", type=str, default="results")
     parser.add_argument("--print_interval", type=int, default=50)
@@ -109,7 +108,7 @@ def main():
     i = 0
     last_acc = 0
     print("train...")
-    for gen in range(args.resume_gen, n_gen):
+    for gen in range(0, n_gen):
         if prune == 'begining_before' and gen == 0:
             mask, step = prune_by_percentile(90, mask, model)
         temp_lr = args.lr
